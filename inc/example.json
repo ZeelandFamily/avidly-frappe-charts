@@ -1,0 +1,43 @@
+{
+	"labels": [
+		"Toukokuu",
+		"Kesäkuu",
+		"Heinäkuu",
+		"Elokuu",
+		"Syyskuu"
+	],
+	"datasets": [
+		{
+			"name": "Ensimmäinen %",
+			"chartType": "line",
+			"values": [
+					9.3,
+					1.4,
+					0.3,
+					8.7,
+					7.6
+				]
+		},
+		{
+			"name": "Toinen %",
+			"chartType": "line",
+			"values": [
+					8.2,
+					8.0,
+					7.9,
+					7.8,
+					7.7
+				]
+			}
+		],
+	"yRegions": [
+		{
+			"label": "Prosenttia",
+			"start": 0,
+			"end": 10,
+			"options": { 
+				"labelPos": "left"
+			}
+		}
+	]
+}
