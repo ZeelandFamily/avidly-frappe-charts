@@ -1,3 +1,6 @@
+/**
+ * Initialize the code editor for chart settings
+ */
 'use strict';
 (function($){
 	$(function(){
