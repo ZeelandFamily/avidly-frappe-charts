@@ -1,10 +1,9 @@
 <?php
 /**
- * Register shortcode
+ * Set up the chart shortcode
  *
- * @package Avidly-Frappe-Charts
+ * @param Array $atts Shortcode attributes
  */
-
 function frappe_shortcode( $atts ) {
 	$chart_id = intval( $atts['id'] );
 

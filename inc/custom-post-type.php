@@ -1,10 +1,7 @@
 <?php
 /**
- * Register Custom Post Type
- *
- * @package Avidly-Frappe-Charts
+ * Register Custom Post Type: Chart
  */
-
 function frappe_register_post_type() {
 
 	$labels = [

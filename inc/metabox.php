@@ -6,7 +6,7 @@
  */
 
 /**
- * Register the metabox
+ * Set up chart metabox
  */
 function frappe_add_metabox() {
 	add_meta_box(
@@ -19,7 +19,7 @@ function frappe_add_metabox() {
 }
 
 /**
- * Meta box display callback.
+ * Metabox display callback.
  *
  * @param WP_Post $post Current post object.
  */
@@ -62,7 +62,7 @@ function frappe_display_metabox( $post ) {
 }
 
 /**
- * Save meta box content.
+ * Save metabox content
  *
  * @param int $post_id Post ID
  */
