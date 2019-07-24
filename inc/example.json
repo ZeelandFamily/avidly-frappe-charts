@@ -1,43 +1,50 @@
 {
 	"labels": [
-		"Toukokuu",
-		"Kesäkuu",
-		"Heinäkuu",
-		"Elokuu",
-		"Syyskuu"
+		"May",
+		"June",
+		"July",
+		"August",
+		"September"
 	],
 	"datasets": [
 		{
-			"name": "Ensimmäinen %",
+			"name": "First value",
 			"chartType": "line",
 			"values": [
 					9.3,
-					1.4,
-					0.3,
+					6.4,
+					7.3,
 					8.7,
 					7.6
 				]
 		},
 		{
-			"name": "Toinen %",
+			"name": "Second value",
 			"chartType": "line",
 			"values": [
-					8.2,
+					5.2,
 					8.0,
-					7.9,
+					6.9,
 					7.8,
-					7.7
+					6.7
 				]
 			}
 		],
 	"yRegions": [
 		{
-			"label": "Prosenttia",
-			"start": 0,
-			"end": 10,
+			"label": "Optimum range",
+			"start": 6.8,
+			"end": 7.8,
 			"options": { 
-				"labelPos": "left"
+				"labelPos": "right"
 			}
+		}
+	],
+	"yMarkers": [
+		{
+			"label": "Maximum",
+			"value": 8.5,
+			"options": { "labelPos": "right" }
 		}
 	]
 }
