@@ -1,11 +1,9 @@
 <?php
 /**
- * Set up Custom Post Type
+ * Register Custom Post Type
+ *
+ * @package Avidly-Frappe-Charts
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	return;
-}
 
 function frappe_register_post_type() {
 
@@ -61,4 +59,3 @@ function frappe_register_post_type() {
 	register_post_type( 'frappe-chart', $args );
 
 }
-add_action( 'init', 'frappe_register_post_type', 0 );

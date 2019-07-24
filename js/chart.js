@@ -9,18 +9,14 @@ for (let index = 0; index < avidlyFrappeCharts.length; index++) {
 		data: JSON.parse( settings.data ),
 		axisOptions: {
 			xIsSeries: true,
+			xAxisMode: 'tick',
 		},
-			lineOptions: {
-			hideDots: 1 // default: 0
+		lineOptions: {
+			hideDots: 1,
 		},
 		title: settings.title,
-		type: 'line', // or 'bar', 'line', 'pie', 'percentage'
-		height: 400,
-		colors: ['purple', '#ffa3ef', 'light-blue'],
-	
-		tooltipOptions: {
-			formatTooltipX: d => d,
-			formatTooltipY: d => d + ' %',
-		}
+		type: 'axis-mixed', // or 'bar', 'line', 'pie', 'percentage'
+		height: 300,
+		colors: ['#107737', '#F08627', '#4E96EF', '#874982', ],
 	});
 }

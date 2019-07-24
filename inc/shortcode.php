@@ -1,33 +1,24 @@
 <?php
 /**
  * Register shortcode
+ *
+ * @package Avidly-Frappe-Charts
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	return;
-}
-
 function frappe_shortcode( $atts ) {
-	// Attributes
-	$atts = shortcode_atts(
-		array(
-			'id' => 0,
-		),
-		$atts
-	);
-
-	// Check that id is set and it's the correct post type
-	if ( ! intval( $atts['id'] ) ) {
-		return;
-	}
 	$chart_id = intval( $atts['id'] );
-	if ( 'frappe-chart' !== get_post_type( $chart_id ) ) {
+
+	// Check that id is set and it belongs to a correct post type
+	if ( ! ( $chart_id && 'frappe-chart' === get_post_type( $chart_id ) ) ) {
 		return;
 	}
+
 	// Enqueue the scripts and styles
 	wp_enqueue_script( 'frappe-js' );
 	wp_enqueue_style( 'frappe-css' );
 	wp_enqueue_script( 'frappe-chart' );
+
+	// Localize chart settings
 	wp_localize_script(
 		'frappe-chart',
 		'avidlyFrappeChart_' . $chart_id,
@@ -38,4 +29,3 @@ function frappe_shortcode( $atts ) {
 	);
 	return '<div class="avidly-frappe-chart" data-frappe-id="' . $chart_id . '"></div>';
 }
-add_shortcode( 'chart', 'frappe_shortcode' );

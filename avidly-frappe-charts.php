@@ -21,12 +21,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once 'inc/metabox.php';
 require_once 'inc/custom-post-type.php';
 require_once 'inc/shortcode.php';
+require_once 'inc/admin-scripts.php';
 
 /**
- * Register scripts
+ * Actions & filters
  */
+
+add_action( 'init', 'frappe_register_post_type', 0 );
 add_action( 'wp_enqueue_scripts', 'frappe_register_scripts', 10, 1 );
 add_action( 'admin_enqueue_scripts', 'frappe_register_scripts', 10, 1 );
+add_action( 'admin_enqueue_scripts', 'frappe_enqueue_admin_scripts', 80, 1 );
+add_action( 'save_post', 'frappe_save_metabox' );
+add_action( 'add_meta_boxes', 'frappe_add_metabox' );
+add_shortcode( 'chart', 'frappe_shortcode' );
+
+/**
+ * Register scripts and styles
+ */
 
 function frappe_register_scripts() {
 	wp_register_script(
@@ -56,27 +67,4 @@ function frappe_register_scripts() {
 		[],
 		'0.1'
 	);
-}
-add_action( 'admin_enqueue_scripts', 'frappe_enqueue_admin_scripts', 80, 1 );
-
-/**
- * Enqueue the Code Editor and JS
- *
- * @param string $hook
- */
-function frappe_enqueue_admin_scripts( $hook ) {
-	if ( ! get_the_ID() ) {
-		return;
-	}
-	if ( 'frappe-chart' !== get_post_type( get_the_ID() ) ) { 
-		return;
-	}
-
-	if ( 'post.php' === $hook || 'post-new.php' === $hook ) {
-		wp_enqueue_code_editor( [ 'type' => 'application/json' ] );
-		wp_enqueue_script( 'js-code-editor' );
-		wp_enqueue_script( 'frappe-js' );
-		wp_enqueue_style( 'frappe-css' );
-		wp_enqueue_script( 'frappe-chart' );
-	}
 }

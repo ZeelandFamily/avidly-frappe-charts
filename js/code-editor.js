@@ -9,7 +9,6 @@
 				{
 					indentUnit: 2,
 					tabSize: 2,
-					mode: 'json',
 				}
 			);
 			var editor = wp.codeEditor.initialize( $('#code_editor_page_json'), editorSettings );
@@ -18,5 +17,5 @@
 })(jQuery);
 
 (function($){
-	
+
 })(jQuery);
