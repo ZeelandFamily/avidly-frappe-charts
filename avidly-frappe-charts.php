@@ -2,10 +2,10 @@
 
 /**
  * Plugin Name: Frappe Charts for WordPress
- * Plugin Description: Add interactive and animated custom SVG charts to your content
  * Plugin URI: https://github.com/ZeelandFamily/avidly-frappe-charts
+ * Description: Add interactive and animated custom SVG charts to your content
  * Author: Avidly / Niku Hietanen
- * Version: 0.2
+ * Version: 1.0
  * Author URI: https://www.avidlyagency.com/
  *
  * @package Avidly-Frappe-Charts
