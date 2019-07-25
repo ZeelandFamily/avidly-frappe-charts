@@ -2,6 +2,8 @@
 
 This plugin makes possible to use interactive [Frappe Charts](https://frappe.io/charts) in WordPress.
 
+![Screenshot of Frappe Charts in Dashboard](screenshot.png?raw=true)
+
 ## Usage
 
 1. Install & activate plugin
