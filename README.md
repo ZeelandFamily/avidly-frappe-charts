@@ -22,3 +22,4 @@ For more information / options, see [Frappe Charts Documentation](https://frappe
 - Make more chart settings editable from dashboard, like axis options, line options and colors
 - Import from CSV
 - Build Gutenberg block
+- Allow only validated JSON to be submitted
