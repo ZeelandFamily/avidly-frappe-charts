@@ -69,7 +69,7 @@ function frappe_save_metabox( $post_id ) {
 	if ( defined( 'DOING_AJAX' ) ) {
 		return;
 	}
-	if ( ! wp_verify_nonce( $_POST['frappe_nonce'], 'frappe_chart_' . $post_id ) ) {
+	if ( isset( $_POST['chart-settings'] ) && ! wp_verify_nonce( $_POST['frappe_nonce'], 'frappe_chart_' . $post_id ) ) {
 		die( 'Security check' );
 	}
 	if ( isset( $_POST['chart-settings'] ) && json_decode( wp_unslash( $_POST['chart-settings'] ) ) ) {

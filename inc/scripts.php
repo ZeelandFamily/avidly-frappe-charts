@@ -43,7 +43,7 @@ function frappe_enqueue_admin_scripts( $hook ) {
 	if ( ! get_the_ID() ) {
 		return;
 	}
-	if ( 'frappe-chart' !== get_post_type( get_the_ID() ) ) { 
+	if ( 'frappe-chart' !== get_post_type( get_the_ID() ) ) {
 		return;
 	}
 
