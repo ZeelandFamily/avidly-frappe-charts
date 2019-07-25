@@ -17,5 +17,6 @@ For more information / options, see [Frappe Charts Documentation](https://frappe
 ## Future improvements
 
 - Add build process for JS to compile the code to one file
-- Make more chart settings editable from dashboard, like axis options, line options and colors.
-- Import from CSV?
+- Make more chart settings editable from dashboard, like axis options, line options and colors
+- Import from CSV
+- Build Gutenberg block
