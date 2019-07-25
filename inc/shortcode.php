@@ -5,7 +5,7 @@
  * @param Array $atts Shortcode attributes
  */
 function frappe_shortcode( $atts ) {
-	$chart_id = intval( $atts['id'] );
+	$chart_id = absint( $atts['id'] );
 
 	// Check that id is set and it belongs to a correct post type
 	if ( ! ( $chart_id && 'frappe-chart' === get_post_type( $chart_id ) ) ) {

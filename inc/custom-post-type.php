@@ -33,7 +33,7 @@ function frappe_register_post_type() {
 		'items_list_navigation' => __( 'Charts list navigation', 'avidly-frappe' ),
 		'filter_items_list'     => __( 'Filter charts list', 'avidly-frappe' ),
 	];
-	$args = [
+	$args   = [
 		'label'               => __( 'Chart', 'avidly-frappe' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title' ),

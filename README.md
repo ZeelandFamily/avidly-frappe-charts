@@ -13,3 +13,9 @@ For more information / options, see [Frappe Charts Documentation](https://frappe
 3. Copy the provided shortcode and paste it in your post content. You can also use Gutenberg Shortcode Block to do this.
 
 4. Profit
+
+## Future improvements
+
+- Add build process for JS to compile the code to one file
+- Make more chart settings editable from dashboard, like axis options, line options and colors.
+- Import from CSV?

@@ -28,10 +28,7 @@ function frappe_display_metabox( $post ) {
 	$chart_id = $post->ID;
 
 	// Load example values on first time
-	$chart_settings = get_post_meta( $chart_id, 'chart-settings', true ) ? get_post_meta( $chart_id, 'chart-settings', true ) : file_get_contents( plugin_dir_path( __FILE__ ) . 'example.json' );
-
-	// Set nonce TODO: fix this
-	// wp_nonce_field( 'frappe_chart_' . $post_id );
+	$chart_settings = get_post_meta( $chart_id, 'chart-settings', true ) ? get_post_meta( $chart_id, 'chart-settings', true ) : file_get_contents( plugin_dir_path( __DIR__ ) . 'example.json' );
 
 	// Localize chart data and options for preview
 	wp_localize_script(
@@ -50,8 +47,10 @@ function frappe_display_metabox( $post ) {
 	<fieldset>
 		<h3>Values</h3>
 		<p class="description">Use JSON</p>
-		<?php // TODO: how do i escape this without breaking the JSON? ?>
-		<textarea id="code_editor_page_json" rows="40" name="chart-settings" class="widefat textarea"><?php echo wp_unslash( $chart_settings ); ?></textarea>
+		<textarea id="code_editor_page_json" rows="40" name="chart-settings" class="widefat textarea">
+			<?php echo esc_textarea( wp_unslash( $chart_settings ) ); ?>
+		</textarea>
+		<?php wp_nonce_field( 'frappe_chart_' . $chart_id, 'frappe_nonce' ); ?>
 	</fieldset>
 	<style>
 		.CodeMirror {
@@ -70,11 +69,11 @@ function frappe_save_metabox( $post_id ) {
 	if ( defined( 'DOING_AJAX' ) ) {
 		return;
 	}
-	if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'frappe_chart_' . $post_id ) ) {
-		// die( 'Security check' ); TODO: Fix this
+	if ( ! wp_verify_nonce( $_POST['frappe_nonce'], 'frappe_chart_' . $post_id ) ) {
+		die( 'Security check' );
 	}
-	if ( isset( $_POST['chart-settings'] ) ) {
-		$chart_settings = $_POST['chart-settings']; // TODO: How to escape without breaking JSON
+	if ( isset( $_POST['chart-settings'] ) && json_decode( wp_unslash( $_POST['chart-settings'] ) ) ) {
+		$chart_settings = $_POST['chart-settings'];
 		update_post_meta( $post_id, 'chart-settings', $chart_settings );
 	}
 }
