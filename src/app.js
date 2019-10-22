@@ -1,5 +1,3 @@
-import "core-js/stable";
-
 import { Chart } from 'frappe-charts/dist/frappe-charts.esm.js'
 // import css
 import 'frappe-charts/dist/frappe-charts.min.css'

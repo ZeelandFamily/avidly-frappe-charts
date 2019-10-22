@@ -14,16 +14,7 @@ const base = {
         ]
       },
       {
-        test: /\.(svg|png|jpg|jpeg|gif|eot|ttf|woff2|woff)$/,
-        use: [
-          {
-            loader: "url-loader"
-          }
-        ]
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /\.js$/,
         use: [
           {
             loader: "babel-loader"
