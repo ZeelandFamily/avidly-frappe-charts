@@ -13,8 +13,6 @@ function frappe_shortcode( $atts ) {
 	}
 
 	// Enqueue the scripts and styles
-	wp_enqueue_script( 'frappe-js' );
-	wp_enqueue_style( 'frappe-css' );
 	wp_enqueue_script( 'frappe-chart' );
 
 	// Localize chart settings
