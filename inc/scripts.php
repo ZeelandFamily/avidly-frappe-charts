@@ -7,30 +7,17 @@
 function frappe_register_scripts() {
 	wp_register_script(
 		'js-code-editor',
-		plugin_dir_url( __DIR__ ) . 'js/code-editor.js',
+		plugin_dir_url( __DIR__ ) . 'dist/admin.js',
 		[ 'jquery' ],
 		'0.1',
 		true
 	);
 	wp_register_script(
-		'frappe-js',
-		plugin_dir_url( __DIR__ ) . 'js/frappe-charts.min.iife.js',
-		[],
-		'0.1',
-		true
-	);
-	wp_register_script(
 		'frappe-chart',
-		plugin_dir_url( __DIR__ ) . 'js/chart.js',
+		plugin_dir_url( __DIR__ ) . 'dist/app.js',
 		[],
-		'0.1',
+		'0.2',
 		true
-	);
-	wp_register_style(
-		'frappe-css',
-		plugin_dir_url( __DIR__ ) . 'js/frappe-charts.min.css',
-		[],
-		'0.1'
 	);
 }
 
@@ -50,8 +37,6 @@ function frappe_enqueue_admin_scripts( $hook ) {
 	if ( 'post.php' === $hook || 'post-new.php' === $hook ) {
 		wp_enqueue_code_editor( [ 'type' => 'application/json' ] );
 		wp_enqueue_script( 'js-code-editor' );
-		wp_enqueue_script( 'frappe-js' );
-		wp_enqueue_style( 'frappe-css' );
 		wp_enqueue_script( 'frappe-chart' );
 	}
 }

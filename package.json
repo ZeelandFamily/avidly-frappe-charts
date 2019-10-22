@@ -1,0 +1,35 @@
+{
+  "name": "avidly-frappe-charts",
+  "version": "1.0.0",
+  "description": "This plugin makes possible to use interactive [Frappe Charts](https://frappe.io/charts) in WordPress.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeelandFamily/avidly-frappe-charts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeelandFamily/avidly-frappe-charts/issues"
+  },
+  "homepage": "https://github.com/ZeelandFamily/avidly-frappe-charts#readme",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^5.0.0",
+    "laravel-mix-polyfill": "^1.1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "frappe-charts": "^1.3.0"
+  }
+}
