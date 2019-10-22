@@ -16,6 +16,8 @@ For more information / options, see [Frappe Charts Documentation](https://frappe
 
 4. Profit
 
+*Frappe Charts does not work in IE11. You can supply the chart as an image using Featured Image for fallback.*
+
 ## Future improvements
 
 - Add build process for JS to compile the code to one file
