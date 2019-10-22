@@ -1,0 +1,36 @@
+{
+  "name": "avidly-frappe-charts",
+  "version": "1.0.0",
+  "description": "This plugin makes possible to use interactive [Frappe Charts](https://frappe.io/charts) in WordPress.",
+  "main": "index.js",
+  "scripts": {
+    "development": "webpack --mode=development --progress",
+    "watch": "webpack --mode=development --progress --watch",
+    "production": "webpack --mode=production --no-progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeelandFamily/avidly-frappe-charts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeelandFamily/avidly-frappe-charts/issues"
+  },
+  "homepage": "https://github.com/ZeelandFamily/avidly-frappe-charts#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "core-js": "^3.3.3",
+    "frappe-charts": "^1.3.0"
+  }
+}
