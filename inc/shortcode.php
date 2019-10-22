@@ -26,5 +26,11 @@ function frappe_shortcode( $atts ) {
 			'title' => esc_html( get_the_title( $chart_id ) ),
 		]
 	);
-	return '<div class="avidly-frappe-chart" data-frappe-id="' . $chart_id . '"></div>';
+
+	// Get the chart fallback image for legacy browsers
+	$html  = '<div class="avidly-frappe-chart" data-frappe-id="' . $chart_id . '">';
+	$html .= get_the_post_thumbnail( $chart_id ) ? '<div class="avidly-frappe-chart-fallback" hidden>' . get_the_post_thumbnail( $chart_id, 'large' ) . '</div>' : '';
+	$html .= '</div>';
+
+	return $html;
 }
