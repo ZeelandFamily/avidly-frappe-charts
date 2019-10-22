@@ -36,7 +36,7 @@ function frappe_register_post_type() {
 	$args   = [
 		'label'               => __( 'Chart', 'avidly-frappe' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title' ),
+		'supports'            => array( 'title', 'thumbnail' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,

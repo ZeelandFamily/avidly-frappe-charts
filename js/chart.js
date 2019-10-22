@@ -2,7 +2,13 @@
  * Initialize all Frappe charts found in DOM
  */
 (function() {
-
+	/**
+	 * Detect IE for fallbacks
+	 */
+	var isIE = false;
+	if (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || navigator.userAgent.indexOf('Trident/') > -1 ){ 
+		isIE = true;
+	}
 	// Select all charts in a page
 	var avidlyFrappeCharts = document.querySelectorAll( '.avidly-frappe-chart' );
 
@@ -10,6 +16,14 @@
 	for (var index = 0; index < avidlyFrappeCharts.length; index++) {
 
 		var element = avidlyFrappeCharts[index];
+		
+		// Show fallback if IE
+		if (isIE) {
+			var fallback = element.querySelector( '.avidly-frappe-chart-fallback' );
+			var chart = element.querySelector( '.chart-container' );
+			fallback.removeAttribute( 'hidden' );
+			chart.addAttribute( 'hidden' );
+		}
 
 		// Get the id
 		var id = element.dataset.frappeId ? element.dataset.frappeId : 0;
