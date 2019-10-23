@@ -1,4 +1,4 @@
-import { Chart } from 'frappe-charts/dist/frappe-charts.esm.js'
+import { Chart } from '!babel-loader!frappe-charts/dist/frappe-charts.esm.js'
 // import css
 import 'frappe-charts/dist/frappe-charts.min.css'
 
