@@ -4,14 +4,7 @@ const base = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "url-loader"
-          },
-          {
-            loader: "css-loader"
-          }
-        ]
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
